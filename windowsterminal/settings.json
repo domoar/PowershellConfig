@@ -1,0 +1,111 @@
+{
+    "$help": "https://aka.ms/terminal-documentation",
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "actions": 
+    [
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "down"
+            },
+            "id": "User.splitPane.D5151347"
+        },
+        {
+            "command": 
+            {
+                "action": "copy",
+                "singleLine": false
+            },
+            "id": "User.copy.644BA8F2"
+        },
+        {
+            "command": "paste",
+            "id": "User.paste"
+        },
+        {
+            "command": "find",
+            "id": "User.find"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "left"
+            },
+            "id": "User.splitPane.21DBB4A1"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "id": "User.splitPane.A6751878"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "right"
+            },
+            "id": "User.splitPane.864CD510"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "auto"
+            },
+            "id": "User.splitPane.91AB55B1"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "up"
+            },
+            "id": "User.splitPane.B39B174B"
+        }
+    ],
+    "copyFormatting": "none",
+    "copyOnSelect": false,
+    "keybindings": 
+    [
+        {
+            "id": "User.copy.644BA8F2",
+            "keys": "ctrl+c"
+        },
+        {
+            "id": "User.find",
+            "keys": "ctrl+shift+f"
+        },
+        {
+            "id": "User.paste",
+            "keys": "ctrl+v"
+        },
+        {
+            "id": "User.splitPane.A6751878",
+            "keys": "alt+shift+d"
+        }
+    ],
+    "newTabMenu": 
+    [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
+    "profiles": 
+    {
+        "defaults": 
+        {
+            "font": 
+            {
+                "face": "JetBrainsMono Nerd Font"
+            }
+        }
+    },
+    "schemes": [],
+    "themes": []
+}
