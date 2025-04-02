@@ -22,7 +22,7 @@ Get-ChildItem -Path $modulesPath -Directory | ForEach-Object {
             -ModuleVersion "1.0.0" `
             -Author "domoar (Manuel Dausmann)" `
             -Description "manifest for $moduleName" `
-            -PowerShellVersion "7.5"
+            -PowerShellVersion "7.5" `
             -PassThru
     }
     else {
