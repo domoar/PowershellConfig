@@ -23,3 +23,6 @@ Add-Content -Path $PROFILE_PATH -Value 'oh-my-posh init pwsh | Invoke-Expression
 
 # Reload the profile to apply changes
 . $PROFILE_PATH
+
+
+# TODO rmdir CustomModules then mkdir and rewrite
