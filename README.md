@@ -21,4 +21,3 @@ This repository contains my personal PowerShell setup, including:
 ### 1. Clone this repository
 
 ```powershell
-git clone https://github.com/yourname/pwsh-setup.git
