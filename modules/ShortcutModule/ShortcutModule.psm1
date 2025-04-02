@@ -29,3 +29,12 @@ function Open-In-FileExplorer {
     Start-Process explorer.exe -ArgumentList $PWD
 }
 Set-Alias -Name fe -Value Open-In-FileExplorer
+
+<#
+
+#>
+function SlideToShutDown{
+    C:\Windows\System32\SlideToShutDown.exe
+    exit
+}
+New-Alias -Name conexit -Value SlideToShutDown
