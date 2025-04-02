@@ -1,3 +1,11 @@
+# =================================================
+# PowerShell Module to manage Virtualbox instances
+# =================================================
+
+
+<#
+
+#>
 function Stop-VirtualBoxVM {
     param (
         [string]$VMName
@@ -29,6 +37,9 @@ function Stop-VirtualBoxVM {
 }
 Set-Alias -Name vboxstop -Value Stop-VirtualBoxVM
 
+<#
+
+#>
 function Start-VirtualBoxVM {
     param (
         [Parameter(Mandatory = $true)]
