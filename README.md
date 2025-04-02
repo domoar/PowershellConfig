@@ -10,8 +10,8 @@ This repository contains my personal PowerShell setup, including:
 
 ## 📁 Contents
 
-- `profile.ps1` – PowerShell profile script, loaded at shell startup  
-- `MyModule/` – Custom PowerShell module with reusable functions  
+- `profile` – PowerShell profile script, loaded at shell startup  
+- `modules/` – Custom PowerShell module with reusable functions  
 - `WindowsTerminal/` – Configuration for Windows Terminal (`settings.json`, etc.)
 
 ---
@@ -21,3 +21,5 @@ This repository contains my personal PowerShell setup, including:
 ### 1. Clone this repository
 
 ```powershell
+code $Profile
+```
