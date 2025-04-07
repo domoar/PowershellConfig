@@ -1,12 +1,26 @@
 # =================================================
 # PowerShell Module: Docker Shortcuts
-# Requires Docker Desktop version 4.37 or higher
-# <ref>https://docs.docker.com/desktop/features/desktop-cli/</ref>
+# Requires Docker Desktop version 4.27 or higher
+# Reference: https://docs.docker.com/desktop/features/desktop-cli/
+# Author: Manuel Dausmann
+# Created: 2025-04-07
 # =================================================
 
 <#
 .SYNOPSIS
 Checks whether Docker Desktop is currently running.
+
+.DESCRIPTION
+Uses the Docker CLI to determine whether Docker Desktop is currently running
+by evaluating the output of 'docker desktop status'.
+
+.EXAMPLE
+Test-DockerDesktopRunning
+Returns $true if Docker Desktop is running, otherwise $false.
+
+.NOTES
+Author: Manuel Dausmann
+Date: 2025-04-07
 #>
 function Test-DockerDesktopRunning {
     $statusOutput = docker desktop status 2>$null
@@ -15,7 +29,19 @@ function Test-DockerDesktopRunning {
 
 <#
 .SYNOPSIS
-Checks whether a docker-compose.yml or .yaml file exists in the current directory.
+Checks whether a docker-compose file exists in the current directory.
+
+.DESCRIPTION
+Looks for a file named docker-compose.yml or docker-compose.yaml
+in the current working directory.
+
+.EXAMPLE
+Test-DockerComposeFile
+Returns $true if a compose file is found, otherwise $false.
+
+.NOTES
+Author: Manuel Dausmann
+Date: 2025-04-07
 #>
 function Test-DockerComposeFile {
     $composeFile = Get-ChildItem -Path . -Filter "docker-compose.y*ml" -ErrorAction SilentlyContinue
@@ -24,7 +50,19 @@ function Test-DockerComposeFile {
 
 <#
 .SYNOPSIS
-Checks if the installed Docker Desktop version meets the minimum required version.
+Checks if Docker Desktop meets the required minimum version.
+
+.DESCRIPTION
+Ensures that the installed version of Docker Desktop is at least 4.27.0.
+Parses the version returned by 'docker version' and compares it to the minimum.
+
+.EXAMPLE
+Test-DockerDesktopVersion
+Returns $true if Docker is installed and meets the version requirement.
+
+.NOTES
+Author: Manuel Dausmann
+Date: 2025-04-07
 #>
 function Test-DockerDesktopVersion {
     $requiredVersion = [version]"4.27.0"
@@ -47,7 +85,21 @@ function Test-DockerDesktopVersion {
 
 <#
 .SYNOPSIS
-Runs `docker compose up` if Docker Desktop is running and a compose file is present.
+Starts Docker Compose in the current directory.
+
+.DESCRIPTION
+Runs 'docker compose up' if Docker Desktop is running and a valid
+docker-compose file is found in the current directory. Checks for
+version and runtime prerequisites before execution.
+
+.EXAMPLE
+Docker-Compose-Up
+Starts containers defined in the current directory's compose file.
+
+.NOTES
+Alias: dcu
+Author: Manuel Dausmann
+Date: 2025-04-07
 #>
 function Docker-Compose-Up {
     if (-not (Test-DockerDesktopVersion)) {
@@ -70,7 +122,20 @@ Set-Alias -Name dcu -Value Docker-Compose-Up
 
 <#
 .SYNOPSIS
-Runs `docker compose down` if Docker Desktop is running and a compose file is present.
+Stops Docker Compose containers in the current directory.
+
+.DESCRIPTION
+Runs 'docker compose down' if Docker Desktop is running and a valid
+docker-compose file is found in the current directory.
+
+.EXAMPLE
+Docker-Compose-Down
+Stops and removes containers defined in the docker-compose file.
+
+.NOTES
+Alias: dcd
+Author: Manuel Dausmann
+Date: 2025-04-07
 #>
 function Docker-Compose-Down {
     if (-not (Test-DockerDesktopVersion)) {
@@ -94,7 +159,20 @@ Set-Alias -Name dcd -Value Docker-Compose-Down
 
 <#
 .SYNOPSIS
-Starts Docker Desktop if it is not already running.
+Starts Docker Desktop if it is not running.
+
+.DESCRIPTION
+Checks if Docker Desktop is running. If not, attempts to start it
+using 'docker desktop start'. Requires Docker CLI access.
+
+.EXAMPLE
+Docker-Desktop-Start
+Starts Docker Desktop from PowerShell.
+
+.NOTES
+Alias: dds
+Author: Manuel Dausmann
+Date: 2025-04-07
 #>
 function Docker-Desktop-Start {
     if (-not (Test-DockerDesktopVersion)) {
@@ -113,7 +191,19 @@ Set-Alias -Name dds -Value Docker-Desktop-Start
 
 <#
 .SYNOPSIS
-Stops Docker Desktop if it is currently running.
+Stops Docker Desktop if it is running.
+
+.DESCRIPTION
+Checks if Docker Desktop is currently running and stops it if so.
+
+.EXAMPLE
+Docker-Desktop-Stop
+Stops the Docker Desktop service.
+
+.NOTES
+Alias: ddstop
+Author: Manuel Dausmann
+Date: 2025-04-07
 #>
 function Docker-Desktop-Stop {
     if (-not (Test-DockerDesktopVersion)) {
@@ -125,14 +215,27 @@ function Docker-Desktop-Stop {
         Write-Host "[Would skip] Docker Desktop is not running."
         return
     }
-    
+
     docker desktop stop
 }
 Set-Alias -Name ddstop -Value Docker-Desktop-Stop
 
 <#
 .SYNOPSIS
-Restarts Docker Desktop if it is running, otherwise suggests starting it.
+Restarts Docker Desktop if it is running.
+
+.DESCRIPTION
+If Docker Desktop is running, restarts the application. Otherwise,
+informs the user that it is not running and suggests starting it.
+
+.EXAMPLE
+Docker-Desktop-Restart
+Restarts Docker Desktop if it's active.
+
+.NOTES
+Alias: ddres
+Author: Manuel Dausmann
+Date: 2025-04-07
 #>
 function Docker-Desktop-Restart {
     if (-not (Test-DockerDesktopVersion)) {

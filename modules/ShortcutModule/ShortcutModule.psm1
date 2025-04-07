@@ -1,10 +1,24 @@
 # =================================================
-# PowerShell Module to use shortcuts for navigation
+# PowerShell Module: Shortcuts for Quick Navigation and Utilities
+# Author: Manuel Dausmann
+# Created: 2025-04-07
 # =================================================
 
 <#
 .SYNOPSIS
-Navigates to the user's default source/repos (VisualStudio) directory.
+Navigates to the current user's Visual Studio "source\repos" directory.
+
+.DESCRIPTION
+Changes the current working directory to the default Visual Studio
+repository path located at "C:\Users\<Username>\source\repos".
+
+.EXAMPLE
+Go-To-Repos
+Navigates to the default Visual Studio repositories folder.
+
+.NOTES
+Author: Manuel Dausmann
+Date: 2025-04-07
 #>
 function Go-To-Repos {
     $Username = $env:USERNAME
@@ -15,7 +29,19 @@ Set-Alias -Name repos -Value Go-To-Repos
 
 <#
 .SYNOPSIS
-Navigates to the user's home directory. (=> cd)
+Navigates to the user's home directory.
+
+.DESCRIPTION
+Changes the current directory to the user's home folder. This is a shortcut
+for quickly returning to the root personal directory (e.g., Documents, Downloads).
+
+.EXAMPLE
+Go-To-Home
+Navigates to the user's home directory.
+
+.NOTES
+Author: Manuel Dausmann
+Date: 2025-04-07
 #>
 function Go-To-Home {
     $HomePath = $home
@@ -26,6 +52,18 @@ Set-Alias -Name home -Value Go-To-Home
 <#
 .SYNOPSIS
 Opens the current directory in File Explorer.
+
+.DESCRIPTION
+Launches Windows File Explorer and opens it in the directory specified by
+the current working location of the PowerShell session.
+
+.EXAMPLE
+Open-In-FileExplorer
+Opens the folder where the command is executed in File Explorer.
+
+.NOTES
+Author: Manuel Dausmann
+Date: 2025-04-07
 #>
 function Open-In-FileExplorer {
     Start-Process explorer.exe -ArgumentList $PWD
@@ -34,9 +72,21 @@ Set-Alias -Name fe -Value Open-In-FileExplorer
 
 <#
 .SYNOPSIS
-Starts the shutdown process via the slide show.
+Starts the Windows Slide to Shutdown screen.
+
+.DESCRIPTION
+Executes the Windows SlideToShutDown feature, which provides a touch-friendly
+interface to initiate shutdown. Suitable for tablets or touchscreen devices.
+
+.EXAMPLE
+SlideToShutDown
+Launches the slide-to-shutdown screen and exits the current PowerShell session.
+
+.NOTES
+Author: Manuel Dausmann
+Date: 2025-04-07
 #>
-function SlideToShutDown{
+function SlideToShutDown {
     C:\Windows\System32\SlideToShutDown.exe
     exit
 }

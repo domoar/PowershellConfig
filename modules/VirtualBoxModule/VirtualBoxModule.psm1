@@ -1,10 +1,31 @@
 # =================================================
-# PowerShell Module to manage VirtualBox instances
+# PowerShell Module: VirtualBox Instance Manager
+# Description: Start or stop VirtualBox VMs from PowerShell
+# Author: Manuel Dausmann
+# Created: 2025-04-07
 # =================================================
 
 <#
 .SYNOPSIS
-Stops one or all running VirtualBox VMs using ACPI power button.
+Stops one or all running VirtualBox virtual machines using ACPI power button.
+
+.DESCRIPTION
+Uses the VBoxManage CLI to gracefully shut down a running VM by triggering
+an ACPI power event. If a VM name is provided, only that machine is shut down.
+If no name is specified, all currently running VMs are shut down.
+
+.EXAMPLE
+Stop-VirtualBoxVM -VMName "MyVM"
+Sends the ACPI shutdown signal to the VM named "MyVM".
+
+.EXAMPLE
+Stop-VirtualBoxVM
+Sends the ACPI shutdown signal to all currently running VirtualBox VMs.
+
+.NOTES
+Alias: vboxstop  
+Author: Manuel Dausmann  
+Date: 2025-04-07
 #>
 function Stop-VirtualBoxVM {
     param (
@@ -39,7 +60,20 @@ Set-Alias -Name vboxstop -Value Stop-VirtualBoxVM
 
 <#
 .SYNOPSIS
-Starts a specific VirtualBox VM in headless mode.
+Starts a VirtualBox virtual machine in headless mode.
+
+.DESCRIPTION
+Launches a specified VM using VirtualBox's headless mode (without GUI). Validates
+the presence of the VM before attempting to start it.
+
+.EXAMPLE
+Start-VirtualBoxVM -VMName "MyVM"
+Starts the VirtualBox VM named "MyVM" in headless mode.
+
+.NOTES
+Alias: vboxstart  
+Author: Manuel Dausmann  
+Date: 2025-04-07
 #>
 function Start-VirtualBoxVM {
     param (

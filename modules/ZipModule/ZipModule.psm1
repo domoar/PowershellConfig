@@ -1,3 +1,33 @@
+# =================================================
+# PowerShell Module: 7-Zip Archiving Utilities
+# Requires: 7-Zip CLI (7z.exe) installed at default path
+# Author: Manuel Dausmann
+# Created: 2025-04-07
+# =================================================
+
+<#
+.SYNOPSIS
+Unpacks a ZIP archive using 7-Zip CLI.
+
+.DESCRIPTION
+Extracts a `.zip` archive to a specified destination folder using the 7-Zip command-line tool.
+If no destination is provided, a folder with the same name as the archive will be created
+in the current directory.
+
+.EXAMPLE
+UnpackFileWith7Zip -ArchivePath "C:\Downloads\file.zip"
+Unpacks file.zip to a folder named "file" in the current directory.
+
+.EXAMPLE
+UnpackFileWith7Zip -ArchivePath "C:\Downloads\file.zip" -DestinationPath "C:\Output"
+Unpacks the contents of file.zip into C:\Output.
+
+.NOTES
+Alias: unpack  
+Requires: 7-Zip installed at "C:\Program Files\7-Zip\7z.exe"  
+Author: Manuel Dausmann  
+Date: 2025-04-07
+#>
 function UnpackFileWith7Zip {
     param (
         [Parameter(Mandatory)]
@@ -29,7 +59,7 @@ function UnpackFileWith7Zip {
     }
     
     if (-not (Test-Path $fullDestinationPath)) {
-        New-Item -Path $fullDestinationPath -ItemType Directory
+        New-Item -Path $fullDestinationPath -ItemType Directory | Out-Null
     }
 
     & $zipPath x "$ArchivePath" -o"$fullDestinationPath" -aoa -r
@@ -38,6 +68,29 @@ function UnpackFileWith7Zip {
 }
 Set-Alias unpack UnpackFileWith7Zip
 
+<#
+.SYNOPSIS
+Packs a file or folder into a ZIP archive using 7-Zip CLI.
+
+.DESCRIPTION
+Uses the 7-Zip command-line interface to compress a file or folder into a `.zip` archive.
+If no destination path is provided, the archive will be created in the current directory
+using the base name of the source as the filename.
+
+.EXAMPLE
+PackFileWith7Zip -SourcePath "C:\Projects\MyApp"
+Creates MyApp.zip in the current directory containing all contents of MyApp.
+
+.EXAMPLE
+PackFileWith7Zip -SourcePath "C:\Projects\MyApp" -DestinationPath "C:\Backups\MyAppBackup.zip"
+Creates the archive at the specified destination.
+
+.NOTES
+Alias: pack  
+Requires: 7-Zip installed at "C:\Program Files\7-Zip\7z.exe"  
+Author: Manuel Dausmann  
+Date: 2025-04-07
+#>
 function PackFileWith7Zip {
     param (
         [Parameter(Mandatory)]
