@@ -2,9 +2,9 @@
 # PowerShell Module to use shortcuts for navigation
 # =================================================
 
-
 <#
-
+.SYNOPSIS
+Navigates to the user's default source/repos (VisualStudio) directory.
 #>
 function Go-To-Repos {
     $Username = $env:USERNAME
@@ -14,7 +14,8 @@ function Go-To-Repos {
 Set-Alias -Name repos -Value Go-To-Repos
 
 <#
-
+.SYNOPSIS
+Navigates to the user's home directory. (=> cd)
 #>
 function Go-To-Home {
     $HomePath = $home
@@ -23,7 +24,8 @@ function Go-To-Home {
 Set-Alias -Name home -Value Go-To-Home
 
 <#
-
+.SYNOPSIS
+Opens the current directory in File Explorer.
 #>
 function Open-In-FileExplorer {
     Start-Process explorer.exe -ArgumentList $PWD

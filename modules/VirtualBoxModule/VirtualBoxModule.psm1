@@ -1,10 +1,10 @@
 # =================================================
-# PowerShell Module to manage Virtualbox instances
+# PowerShell Module to manage VirtualBox instances
 # =================================================
 
-
 <#
-
+.SYNOPSIS
+Stops one or all running VirtualBox VMs using ACPI power button.
 #>
 function Stop-VirtualBoxVM {
     param (
@@ -38,7 +38,8 @@ function Stop-VirtualBoxVM {
 Set-Alias -Name vboxstop -Value Stop-VirtualBoxVM
 
 <#
-
+.SYNOPSIS
+Starts a specific VirtualBox VM in headless mode.
 #>
 function Start-VirtualBoxVM {
     param (
@@ -64,4 +65,3 @@ function Start-VirtualBoxVM {
     VBoxManage startvm "$VMName" --type headless
 }
 Set-Alias -Name vboxstart -Value Start-VirtualBoxVM
-
