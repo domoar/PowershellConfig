@@ -31,3 +31,13 @@ function Open-In-FileExplorer {
     Start-Process explorer.exe -ArgumentList $PWD
 }
 Set-Alias -Name fe -Value Open-In-FileExplorer
+
+<#
+.SYNOPSIS
+Starts the shutdown process via the slide show.
+#>
+function SlideToShutDown{
+    C:\Windows\System32\SlideToShutDown.exe
+    exit
+}
+New-Alias -Name conexit -Value SlideToShutDown
