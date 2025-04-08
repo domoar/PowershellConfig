@@ -91,3 +91,24 @@ function SlideToShutDown {
     exit
 }
 New-Alias -Name conexit -Value SlideToShutDown
+
+<#
+.SYNOPSIS
+Navigates -n directories up from the current working directory
+
+.DESCRIPTION
+Changes the current working directory to -n 
+
+.EXAMPLE
+
+.NOTES
+Author: Manuel Dausmann
+Date: 2025-04-07
+#>
+function Go-Up-N-Directories{
+    param([int]$levels = 1)
+        for ($i = 0; $i -lt $levels; $i++) {
+            Set-Location ..
+        }
+}
+Set-Alias -Name up -Value Go-Up-N-Directories
