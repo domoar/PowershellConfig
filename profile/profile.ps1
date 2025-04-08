@@ -5,5 +5,9 @@ if (-not ($env:PSModulePath -split ";" | Where-Object { $_ -eq $customModulePath
 
 Import-Module VirtualBoxModule -ErrorAction SilentlyContinue
 Import-Module ShortcutModule -ErrorAction SilentlyContinue
+Import-Module DockerModule -ErrorAction SilentlyContinue
+Import-Module ZipModule -ErrorAction SilentlyContinue
+Import-Module VimModule -ErrorAction SilentlyContinue
+Import-Module UtilityModule -ErrorAction SilentlyContinue
 
 oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\kali.omp.json" | Invoke-Expression

@@ -1,3 +1,17 @@
+# Requires Administrator privileges
+
+<#
+.SYNOPSIS
+
+.DESCRIPTION
+
+.EXAMPLE
+
+.NOTES
+Author: Manuel Dausmann
+Date: 2025-04-07
+#>
+function Install-NiceShell {
 # Step 1: Install Oh My Posh using winget
 Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://ohmyposh.dev/install.ps1'))
 
@@ -26,3 +40,6 @@ Add-Content -Path $PROFILE_PATH -Value 'oh-my-posh init pwsh | Invoke-Expression
 
 
 # TODO rmdir CustomModules then mkdir and rewrite
+}
+
+#TODO nodejs, python, dockerdesktop, vscode, dotnet sdk, windows terminal
