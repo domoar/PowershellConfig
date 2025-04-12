@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Manuel\\projects\\priv\\PowershellConfig\\src\\ToolsLibrary\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{71085255-9A43-4D61-A421-4E4C1C74BC6E}|ToolsLibrary\\ToolsLibrary.csproj|c:\\users\\manuel\\projects\\priv\\powershellconfig\\src\\toolslibrary\\toolslibrary\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{71085255-9A43-4D61-A421-4E4C1C74BC6E}|ToolsLibrary\\ToolsLibrary.csproj|solutionrelative:toolslibrary\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{71085255-9A43-4D61-A421-4E4C1C74BC6E}|ToolsLibrary\\ToolsLibrary.csproj|c:\\users\\manuel\\projects\\priv\\powershellconfig\\src\\toolslibrary\\toolslibrary\\coreinstaller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71085255-9A43-4D61-A421-4E4C1C74BC6E}|ToolsLibrary\\ToolsLibrary.csproj|solutionrelative:toolslibrary\\coreinstaller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71085255-9A43-4D61-A421-4E4C1C74BC6E}|ToolsLibrary\\ToolsLibrary.csproj|c:\\users\\manuel\\projects\\priv\\powershellconfig\\src\\toolslibrary\\toolslibrary\\powershellinstaller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71085255-9A43-4D61-A421-4E4C1C74BC6E}|ToolsLibrary\\ToolsLibrary.csproj|solutionrelative:toolslibrary\\powershellinstaller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71085255-9A43-4D61-A421-4E4C1C74BC6E}|ToolsLibrary\\ToolsLibrary.csproj|c:\\users\\manuel\\projects\\priv\\powershellconfig\\src\\toolslibrary\\toolslibrary\\iinstaller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71085255-9A43-4D61-A421-4E4C1C74BC6E}|ToolsLibrary\\ToolsLibrary.csproj|solutionrelative:toolslibrary\\iinstaller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -55,14 +63,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\Manuel\\projects\\priv\\PowershellConfig\\src\\ToolsLibrary\\ToolsLibrary\\Class1.cs",
-              "RelativeDocumentMoniker": "ToolsLibrary\\Class1.cs",
-              "ToolTip": "C:\\Users\\Manuel\\projects\\priv\\PowershellConfig\\src\\ToolsLibrary\\ToolsLibrary\\Class1.cs",
-              "RelativeToolTip": "ToolsLibrary\\Class1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "CoreInstaller.cs",
+              "DocumentMoniker": "C:\\Users\\Manuel\\projects\\priv\\PowershellConfig\\src\\ToolsLibrary\\ToolsLibrary\\CoreInstaller.cs",
+              "RelativeDocumentMoniker": "ToolsLibrary\\CoreInstaller.cs",
+              "ToolTip": "C:\\Users\\Manuel\\projects\\priv\\PowershellConfig\\src\\ToolsLibrary\\ToolsLibrary\\CoreInstaller.cs",
+              "RelativeToolTip": "ToolsLibrary\\CoreInstaller.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T11:56:14.684Z",
+              "WhenOpened": "2025-04-12T18:05:39.908Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PowerShellInstaller.cs",
+              "DocumentMoniker": "C:\\Users\\Manuel\\projects\\priv\\PowershellConfig\\src\\ToolsLibrary\\ToolsLibrary\\PowerShellInstaller.cs",
+              "RelativeDocumentMoniker": "ToolsLibrary\\PowerShellInstaller.cs",
+              "ToolTip": "C:\\Users\\Manuel\\projects\\priv\\PowershellConfig\\src\\ToolsLibrary\\ToolsLibrary\\PowerShellInstaller.cs",
+              "RelativeToolTip": "ToolsLibrary\\PowerShellInstaller.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T18:03:31.235Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IInstaller.cs",
+              "DocumentMoniker": "C:\\Users\\Manuel\\projects\\priv\\PowershellConfig\\src\\ToolsLibrary\\ToolsLibrary\\IInstaller.cs",
+              "RelativeDocumentMoniker": "ToolsLibrary\\IInstaller.cs",
+              "ToolTip": "C:\\Users\\Manuel\\projects\\priv\\PowershellConfig\\src\\ToolsLibrary\\ToolsLibrary\\IInstaller.cs",
+              "RelativeToolTip": "ToolsLibrary\\IInstaller.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T18:02:57.665Z",
               "EditorCaption": ""
             }
           ]
