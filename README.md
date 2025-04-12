@@ -11,6 +11,7 @@ This repository contains my personal PowerShell setup, including:
 ## 📁 Contents
 
 - `profile` – PowerShell profile script, loaded at shell startup  
+- `src/ToolsLibrary` – C# Library to handle setup  
 - `modules/` – Custom PowerShell module with reusable functions  
 - `WindowsTerminal/` – Configuration for Windows Terminal (`settings.json`, etc.)
 

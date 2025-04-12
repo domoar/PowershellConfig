@@ -20,12 +20,12 @@ Navigates to the default Visual Studio repositories folder.
 Author: Manuel Dausmann
 Date: 2025-04-07
 #>
-function Go-To-Repos {
+function Set-ReposDirectory {
     $Username = $env:USERNAME
     $Path = "C:\Users\$Username\source\repos"
     Set-Location $Path
 }
-Set-Alias -Name repos -Value Go-To-Repos
+Set-Alias -Name repos -Value Set-ReposDirectory
 
 <#
 .SYNOPSIS
@@ -43,11 +43,11 @@ Navigates to the user's home directory.
 Author: Manuel Dausmann
 Date: 2025-04-07
 #>
-function Go-To-Home {
+function Set-HomeDirectory {
     $HomePath = $home
     Set-Location $HomePath
 }
-Set-Alias -Name home -Value Go-To-Home
+Set-Alias -Name home -Value Set-HomeDirectory
 
 <#
 .SYNOPSIS
