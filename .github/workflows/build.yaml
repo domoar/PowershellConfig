@@ -1,0 +1,26 @@
+name: Build ToolsLibrary
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Build ToolsLibrary
+      run: |
+        dotnet build src/ToolsLibrary/ToolsLibrary.csproj -c Release
+        mkdir build
+        copy src\ToolsLibrary\bin\Release\net8.0\ToolsLibrary.dll build\

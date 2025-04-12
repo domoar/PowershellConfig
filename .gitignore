@@ -1,0 +1,51 @@
+# =======================
+# .NET / C# build files
+# =======================
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+
+# Build output
+build/*.dll
+build/*.pdb
+build/*.exe
+
+# Rider / VSCode / VS settings
+.idea/
+.vscode/
+*.code-workspace
+
+# Test results
+TestResults/
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+.nuget/
+
+# User-specific files
+*.swp
+*.tmp
+*.bak
+
+# Mac/Linux artifacts
+.DS_Store
+Thumbs.db
+
+# PowerShell history or backup
+*.ps1~
+*.ps1.bak
+
+# Node/npm (if ever added)
+node_modules/
+
+# GitHub Actions secrets (if ever configured)
+.env
+.env.*
