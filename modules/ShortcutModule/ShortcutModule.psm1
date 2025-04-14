@@ -115,10 +115,10 @@ Set-Alias -Name up -Value Go-Up-N-Directories
 
 <#
 .SYNOPSIS
-Navigates -n directories up from the current working directory
+Opens the text file with the recently used shell commands
 
 .DESCRIPTION
-Changes the current working directory to -n 
+Opens the text file with the recently used shell commands
 
 .EXAMPLE
 
