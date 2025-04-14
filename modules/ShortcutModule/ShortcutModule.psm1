@@ -65,10 +65,10 @@ Opens the folder where the command is executed in File Explorer.
 Author: Manuel Dausmann
 Date: 2025-04-07
 #>
-function Open-In-FileExplorer {
+function OpenIn-FileExplorer {
     Start-Process explorer.exe -ArgumentList $PWD
 }
-Set-Alias -Name fe -Value Open-In-FileExplorer
+Set-Alias -Name fe -Value OpenIn-FileExplorer
 
 <#
 .SYNOPSIS
@@ -86,11 +86,11 @@ Launches the slide-to-shutdown screen and exits the current PowerShell session.
 Author: Manuel Dausmann
 Date: 2025-04-07
 #>
-function SlideToShutDown {
+function SlideTo-ShutDown {
     C:\Windows\System32\SlideToShutDown.exe
     exit
 }
-New-Alias -Name conexit -Value SlideToShutDown
+New-Alias -Name conexit -Value SlideTo-ShutDown
 
 <#
 .SYNOPSIS
@@ -112,3 +112,21 @@ function Go-Up-N-Directories{
         }
 }
 Set-Alias -Name up -Value Go-Up-N-Directories
+
+<#
+.SYNOPSIS
+Navigates -n directories up from the current working directory
+
+.DESCRIPTION
+Changes the current working directory to -n 
+
+.EXAMPLE
+
+.NOTES
+Author: Manuel Dausmann
+Date: 2025-04-07
+#>
+function GetFile-RecentCommands{
+    code (Get-PSReadlineOption).HistorySavePath
+}
+Set-Alias -Name recent -Value GetFile-RecentCommands
