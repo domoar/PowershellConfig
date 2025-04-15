@@ -25,7 +25,6 @@ function Set-ReposDirectory {
     $Path = "C:\Users\$Username\source\repos"
     Set-Location $Path
 }
-Set-Alias -Name repos -Value Set-ReposDirectory
 
 <#
 .SYNOPSIS
@@ -47,7 +46,6 @@ function Set-HomeDirectory {
     $HomePath = $home
     Set-Location $HomePath
 }
-Set-Alias -Name home -Value Set-HomeDirectory
 
 <#
 .SYNOPSIS
@@ -86,7 +84,7 @@ Launches the slide-to-shutdown screen and exits the current PowerShell session.
 Author: Manuel Dausmann
 Date: 2025-04-07
 #>
-function SlideTo-ShutDown {
+function Slide-ToShutDown {
     C:\Windows\System32\SlideToShutDown.exe
     exit
 }
@@ -129,4 +127,3 @@ Date: 2025-04-07
 function GetFile-RecentCommands{
     code (Get-PSReadlineOption).HistorySavePath
 }
-Set-Alias -Name recent -Value GetFile-RecentCommands

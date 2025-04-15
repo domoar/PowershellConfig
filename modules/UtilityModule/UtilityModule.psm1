@@ -1,3 +1,9 @@
+# =================================================
+# PowerShell Module: Utility shortcuts
+# Author: Manuel Dausmann
+# Created: 2025-04-07
+# =================================================
+
 function Remove-FolderSafe {
     param(
         [Parameter(Mandatory = $true)]
@@ -32,4 +38,3 @@ function Remove-FolderSafe {
         }
     }
 }
-Set-Alias -Name shred -Value Remove-FolderSafe

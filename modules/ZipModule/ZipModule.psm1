@@ -1,6 +1,7 @@
 # =================================================
 # PowerShell Module: 7-Zip Archiving Utilities
 # Requires: 7-Zip CLI (7z.exe) installed at default path
+# TODO check custom Path?
 # Author: Manuel Dausmann
 # Created: 2025-04-07
 # =================================================
@@ -23,7 +24,6 @@ UnpackFileWith7Zip -ArchivePath "C:\Downloads\file.zip" -DestinationPath "C:\Out
 Unpacks the contents of file.zip into C:\Output.
 
 .NOTES
-Alias: unpack  
 Requires: 7-Zip installed at "C:\Program Files\7-Zip\7z.exe"  
 Author: Manuel Dausmann  
 Date: 2025-04-07
@@ -66,7 +66,6 @@ function UnpackFileWith7Zip {
 
     Write-Host "File unpacked to '$fullDestinationPath'."
 }
-Set-Alias unpack UnpackFileWith7Zip
 
 <#
 .SYNOPSIS
@@ -114,4 +113,3 @@ function PackFileWith7Zip {
 
     Write-Host "File packed @ '$DestinationPath'."
 }
-Set-Alias -Name pack -Value PackFileWith7Zip

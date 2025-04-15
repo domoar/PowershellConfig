@@ -10,28 +10,21 @@ Import-Module ZipModule -Force -ErrorAction SilentlyContinue
 Import-Module VimModule -Force -ErrorAction SilentlyContinue
 Import-Module UtilityModule -Force -ErrorAction SilentlyContinue
 
-Set-AliasSafe -Name <> -Value <> -ErrorAction Stop  #TODO example for Aliases
-Set-AliasSafe -Name <> -Value <> -ErrorAction Stop
-Set-AliasSafe -Name <> -Value <> -ErrorAction Stop
-Set-AliasSafe -Name <> -Value <> -ErrorAction Stop
-Set-AliasSafe -Name <> -Value <> -ErrorAction Stop
-Set-AliasSafe -Name <> -Value <> -ErrorAction Stop
-Set-AliasSafe -Name <> -Value <> -ErrorAction Stop
-Set-AliasSafe -Name <> -Value <> -ErrorAction Stop
-Set-AliasSafe -Name <> -Value <> -ErrorAction Stop
-Set-AliasSafe -Name <> -Value <> -ErrorAction Stop
-Set-AliasSafe -Name <> -Value <> -ErrorAction Stop
-Set-AliasSafe -Name <> -Value <> -ErrorAction Stop
-Set-AliasSafe -Name <> -Value <> -ErrorAction Stop
-Set-AliasSafe -Name <> -Value <> -ErrorAction Stop
-Set-AliasSafe -Name <> -Value <> -ErrorAction Stop
-Set-AliasSafe -Name <> -Value <> -ErrorAction Stop
-Set-AliasSafe -Name <> -Value <> -ErrorAction Stop
-Set-AliasSafe -Name <> -Value <> -ErrorAction Stop
-Set-AliasSafe -Name <> -Value <> -ErrorAction Stop
-Set-AliasSafe -Name <> -Value <> -ErrorAction Stop
-Set-AliasSafe -Name <> -Value <> -ErrorAction Stop
-Set-AliasSafe -Name <> -Value <> -ErrorAction Stop
+Set-AliasSafe -Name unpack -Value UnpackFileWith7Zip ErrorAction Stop  #TODO example for Aliases
+Set-AliasSafe -Name pack -Value PackFileWith7Zip -ErrorAction Stop
+Set-AliasSafe -Name vboxstop -Value Stop-VirtualBoxVM -ErrorAction Stop
+Set-AliasSafe -Name vboxstart -Value Start-VirtualBoxVM -ErrorAction Stop
+Set-AliasSafe -Name shred -Value Remove-FolderSafe -ErrorAction Stop
+Set-AliasSafe -Name repos -Value Set-ReposDirectory -ErrorAction Stop
+Set-AliasSafe -Name home -Value Set-HomeDirectory -ErrorAction Stop
+Set-AliasSafe -Name conexit -Value Slide-ToShutDown -ErrorAction Stop
+Set-AliasSafe -Name up -Value Go-Up-N-Directories -ErrorAction Stop
+Set-AliasSafe -Name recent -Value GetFile-RecentCommands -ErrorAction Stop
+Set-AliasSafe -Name dcu -Value Docker-Compose-Up -ErrorAction Stop
+Set-AliasSafe -Name dcd -Value Docker-Compose-Down -ErrorAction Stop
+Set-AliasSafe -Name ddstart -Value Docker-Desktop-Start -ErrorAction Stop
+Set-AliasSafe -Name ddstop -Value Docker-Desktop-Stop -ErrorAction Stop
+Set-AliasSafe -Name ddres -Value Docker-Desktop-Restart -ErrorAction Stop
 Set-AliasSafe -Name <> -Value <> -ErrorAction Stop
 
 oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\kali.omp.json" | Invoke-Expression

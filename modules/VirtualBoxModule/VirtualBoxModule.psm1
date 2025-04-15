@@ -1,6 +1,5 @@
 # =================================================
 # PowerShell Module: VirtualBox Instance Manager
-# Description: Start or stop VirtualBox VMs from PowerShell
 # Author: Manuel Dausmann
 # Created: 2025-04-07
 # =================================================
@@ -23,7 +22,6 @@ Stop-VirtualBoxVM
 Sends the ACPI shutdown signal to all currently running VirtualBox VMs.
 
 .NOTES
-Alias: vboxstop  
 Author: Manuel Dausmann  
 Date: 2025-04-07
 #>
@@ -56,7 +54,6 @@ function Stop-VirtualBoxVM {
         }
     }
 }
-Set-Alias -Name vboxstop -Value Stop-VirtualBoxVM
 
 <#
 .SYNOPSIS
@@ -98,4 +95,3 @@ function Start-VirtualBoxVM {
     Write-Output "Starting VM '$VMName' in headless mode..."
     VBoxManage startvm "$VMName" --type headless
 }
-Set-Alias -Name vboxstart -Value Start-VirtualBoxVM

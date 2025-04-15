@@ -97,7 +97,6 @@ Docker-Compose-Up
 Starts containers defined in the current directory's compose file.
 
 .NOTES
-Alias: dcu
 Author: Manuel Dausmann
 Date: 2025-04-07
 #>
@@ -118,7 +117,6 @@ function Docker-Compose-Up {
 
     docker compose up
 }
-Set-Alias -Name dcu -Value Docker-Compose-Up
 
 <#
 .SYNOPSIS
@@ -133,7 +131,6 @@ Docker-Compose-Down
 Stops and removes containers defined in the docker-compose file.
 
 .NOTES
-Alias: dcd
 Author: Manuel Dausmann
 Date: 2025-04-07
 #>
@@ -155,7 +152,6 @@ function Docker-Compose-Down {
 
     docker compose down
 }
-Set-Alias -Name dcd -Value Docker-Compose-Down
 
 <#
 .SYNOPSIS
@@ -187,7 +183,6 @@ function Docker-Desktop-Start {
 
     docker desktop start
 }
-Set-Alias -Name dds -Value Docker-Desktop-Start
 
 <#
 .SYNOPSIS
@@ -201,7 +196,6 @@ Docker-Desktop-Stop
 Stops the Docker Desktop service.
 
 .NOTES
-Alias: ddstop
 Author: Manuel Dausmann
 Date: 2025-04-07
 #>
@@ -218,7 +212,6 @@ function Docker-Desktop-Stop {
 
     docker desktop stop
 }
-Set-Alias -Name ddstop -Value Docker-Desktop-Stop
 
 <#
 .SYNOPSIS
@@ -233,7 +226,6 @@ Docker-Desktop-Restart
 Restarts Docker Desktop if it's active.
 
 .NOTES
-Alias: ddres
 Author: Manuel Dausmann
 Date: 2025-04-07
 #>
@@ -249,4 +241,3 @@ function Docker-Desktop-Restart {
         Write-Host "[Would run] Docker Desktop is not running. Would execute: docker desktop start"
     }
 }
-Set-Alias -Name ddres -Value Docker-Desktop-Restart

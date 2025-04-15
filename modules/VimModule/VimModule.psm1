@@ -1,6 +1,9 @@
 # =================================================
-# PowerShell Module to manage Vim
+# PowerShell Module: Manage Vim
+# Author: Manuel Dausmann
+# Created: 2025-04-07
 # =================================================
+
 
 
 <#
