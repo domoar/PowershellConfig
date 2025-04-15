@@ -23,6 +23,7 @@ Get-ChildItem -Path $modulesPath -Directory | ForEach-Object {
             -Author "domoar (Manuel Dausmann)" `
             -Description "manifest for $moduleName" `
             -PowerShellVersion "7.5" `
+            -AliasesToExport @() `
             -PassThru
     }
     else {
