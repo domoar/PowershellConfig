@@ -3,34 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Helpers;
 using Microsoft.Extensions.Logging;
 
 namespace ToolsLibrary
 {
-    public class GitInstaller : IInstaller
+    public class GitInstaller : BaseInstaller<GitInstaller>, IInstaller
     {
-        private readonly ILogger<GitInstaller>? _logger;
         public string Repository { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public string Version { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public bool Result { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public int Install()
+        public override int Install()
         {
-            throw new NotImplementedException();
+            _logger?.LogInstall("foo");
+            return -1;
         }
 
-        public int PostInstall()
+        public override int PostInstall()
         {
-            throw new NotImplementedException();
+            _logger?.LogPostInstall("");
+            return -1;
         }
 
-        public int PreInstall()
+        public override int PreInstall()
         {
-            throw new NotImplementedException();
+            _logger?.LogPreInstall("");
+            return -1;
         }
 
-        public GitInstaller() { 
-            _logger = null;
+        public GitInstaller(ILogger<GitInstaller> logger, IHttpClientFactory clientFactory) : base(logger, clientFactory) { 
         }
     }
 }

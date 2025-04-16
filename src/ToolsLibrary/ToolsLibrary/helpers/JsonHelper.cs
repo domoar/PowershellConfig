@@ -1,6 +1,8 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
+namespace Helpers;
+
 public class JsonHelper
 {
     private static readonly string jsonFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "installed-tools.json");

@@ -1,14 +1,17 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Helpers;
 using Microsoft.Extensions.Logging;
+using System.Diagnostics;
+using System.Net.Http;
+
 
 namespace ToolsLibrary
 {
-    public class PowerShellInstaller : BaseInstaller<PowerShellInstaller>, IInstaller
+    public class PythonInstaller : BaseInstaller<PythonInstaller>, IInstaller
     {
         public string Repository { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public string Version { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
@@ -31,7 +34,8 @@ namespace ToolsLibrary
             _logger.LogPreInstall("");
             return -1;
         }
-        public PowerShellInstaller(ILogger<PowerShellInstaller> logger, IHttpClientFactory clientFactory) : base(logger, clientFactory) { 
+
+        public PythonInstaller(ILogger<PythonInstaller>? logger, IHttpClientFactory clientFactory) : base(logger, clientFactory) { 
         }
     }
 }
