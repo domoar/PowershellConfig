@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
@@ -10,7 +10,7 @@ using Microsoft.Extensions.Logging;
 
 namespace ToolsLibrary
 {
-  public class PowerShellInstaller : BaseInstaller<PowerShellInstaller>, IInstaller
+  public class PowerToysInstaller : BaseInstaller<PowerToysInstaller>, IInstaller
   {
     public string Repository { get; set; }
     public string Version
@@ -71,13 +71,10 @@ namespace ToolsLibrary
       return -1;
     }
 
-    public PowerShellInstaller(
-      ILogger<PowerShellInstaller> logger,
-      IHttpClientFactory clientFactory
-    )
+    public PowerToysInstaller(ILogger<PowerToysInstaller> logger, IHttpClientFactory clientFactory)
       : base(logger, clientFactory)
     {
-      Repository = "https://github.com/PowerShell/PowerShell/releases/latest";
+      Repository = "https://github.com/microsoft/PowerToys/releases/latest";
     }
   }
 }

@@ -1,32 +1,33 @@
 using Microsoft.Extensions.Logging;
+using ToolsLibrary;
 
 namespace Helpers;
 
-public static partial class StructuredLogTemplates {
+public static partial class StructuredLogTemplates
+{
   [LoggerMessage(
     EventId = 101,
     Level = LogLevel.Information,
-    Message = "",
+    Message = "Starting install routine for {Type}",
     SkipEnabledCheck = true
   )]
-  public static partial void LogPreInstall(
-    this ILogger logger, 
-    object result
-  );
+  public static partial void LogStart(this ILogger logger, Type type);
 
   [LoggerMessage(
     EventId = 102,
-    Level = LogLevel.Debug,
-    Message = "",
+    Level = LogLevel.Information,
+    Message = "Finished preinstall routine for {Type}",
     SkipEnabledCheck = true
   )]
-  public static partial void LogInstall(this ILogger logger, object result);
+  public static partial void LogFinish(this ILogger logger, Type type);
 
-    [LoggerMessage(
-    EventId = 103,
-    Level = LogLevel.Debug,
-    Message = "",
-    SkipEnabledCheck = true
-  )]
-  public static partial void LogPostInstall(this ILogger logger, object result);
+  public static void LogStart<T>(this ILogger logger)
+  {
+    logger.LogStart(typeof(T));
+  }
+
+  public static void LogFinish<T>(this ILogger logger)
+  {
+    logger.LogFinish(typeof(T));
+  }
 }
