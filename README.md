@@ -1,3 +1,5 @@
+[![Build ToolsLibrary](https://github.com/domoar/PowershellConfig/actions/workflows/build.yaml/badge.svg)](https://github.com/domoar/PowershellConfig/actions/workflows/build.yaml)
+
 # PowerShell Profile & Custom Module
 
 This repository contains my personal PowerShell setup, including:
