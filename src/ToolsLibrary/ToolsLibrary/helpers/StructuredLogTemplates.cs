@@ -1,7 +1,7 @@
 using Microsoft.Extensions.Logging;
 using ToolsLibrary;
 
-namespace Helpers;
+namespace ToolsLibrary.Helpers;
 
 public static partial class StructuredLogTemplates
 {

@@ -1,9 +1,9 @@
 using Microsoft.Extensions.Logging;
+using ToolsLibrary.Helpers;
 
-namespace ToolsLibrary
-{
-  public class PythonInstaller : BaseInstaller<PythonInstaller>, IInstaller
-  {
+namespace ToolsLibrary;
+
+public class WindowsTerminalInstaller : BaseInstaller<WindowsTerminalInstaller>, IInstaller{
     public string Repository
     {
       get => throw new NotImplementedException();
@@ -38,13 +38,19 @@ namespace ToolsLibrary
 
     public override async Task<int> PreInstall()
     {
+      var client = _clientFactory.CreateClient();
       LogStart();
+      var res = await GithubApiHelper.GetFromGithub(Repository, client, _logger);
       LogFinish();
-      await Task.Delay(1);
-      return -1;
+      if(Version != "NotFound"){
+        // TODO use enum
+        Version = res.Item2;
+      }
+      return res.Item1;
     }
 
-    public PythonInstaller(ILogger<PythonInstaller> logger, IHttpClientFactory clientFactory)
-      : base(logger, clientFactory) { }
-  }
+    public WindowsTerminalInstaller(ILogger<WindowsTerminalInstaller> logger, IHttpClientFactory clientFactory)
+      : base(logger, clientFactory) { 
+        Repository = "https://github.com/microsoft/terminal/releases/latest";
+      }
 }
