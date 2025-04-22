@@ -1,10 +1,7 @@
 <#
 .SYNOPSIS
-
 .DESCRIPTION
-
 .EXAMPLE
-
 .NOTES
 Author: Manuel Dausmann
 Date: 2025-04-07
@@ -15,11 +12,8 @@ function Git-DisplayLog {
 
 <#
 .SYNOPSIS
-
 .DESCRIPTION
-
 .EXAMPLE
-
 .NOTES
 Author: Manuel Dausmann
 Date: 2025-04-07
@@ -35,11 +29,8 @@ function Git-ForcePush {
 
 <#
 .SYNOPSIS
-
 .DESCRIPTION
-
 .EXAMPLE
-
 .NOTES
 Author: Manuel Dausmann
 Date: 2025-04-07
@@ -55,16 +46,13 @@ function Git-Cleanup {
 
 <#
 .SYNOPSIS
-
 .DESCRIPTION
-
 .EXAMPLE
-
 .NOTES
 Author: Manuel Dausmann
 Date: 2025-04-07
 #>
-function Git-CheckoutNewBranch {
+function Git-CreateAndCheckoutNewBranch {
     param (
         [Parameter(Mandatory = $true)]
         [string]$Name
@@ -74,15 +62,57 @@ function Git-CheckoutNewBranch {
 
 <#
 .SYNOPSIS
-
 .DESCRIPTION
-
 .EXAMPLE
-
 .NOTES
 Author: Manuel Dausmann
 Date: 2025-04-07
 #>
 function Git-RevertLastCommit {
     git reset --soft HEAD~1
+}
+
+<#
+.SYNOPSIS
+.DESCRIPTION
+.EXAMPLE
+.NOTES
+Author: Manuel Dausmann
+Date: 2025-04-07
+#>
+function Git-CurrentBranch {
+    git rev-parse --abbrev-ref HEAD
+}
+
+<#
+.SYNOPSIS
+.DESCRIPTION
+.EXAMPLE
+.NOTES
+Author: Manuel Dausmann
+Date: 2025-04-07
+#>
+function Git-UpdateBranch {
+    param (
+        [string]$Branch = "main"
+    )
+    git checkout $Branch
+    git pull origin $Branch
+}
+
+<#
+.SYNOPSIS
+.DESCRIPTION
+.EXAMPLE
+.NOTES
+Author: Manuel Dausmann
+Date: 2025-04-07
+#>
+function Git-AddAllAndCommit {
+    param (
+        [Parameter(Mandatory = $true)]
+        [string]$Message
+    )
+    git add .
+    git commit -m "$Message"
 }
