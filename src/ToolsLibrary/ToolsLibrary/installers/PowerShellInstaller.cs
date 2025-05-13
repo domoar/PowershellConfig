@@ -5,7 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using Helpers;
+using ToolsLibrary.Helpers;
 using Microsoft.Extensions.Logging;
 
 namespace ToolsLibrary
@@ -42,33 +42,15 @@ namespace ToolsLibrary
 
     public override async Task<int> PreInstall()
     {
-      LogStart();
       var client = _clientFactory.CreateClient();
-      var response = await client.GetAsync(Repository);
-
-      if (
-        response.StatusCode == HttpStatusCode.Found
-        || response.StatusCode == HttpStatusCode.Moved
-      )
-      {
-        var redirectUrl = response.Headers.Location?.ToString();
-        _logger.LogDebug("Redirect URL: {URL}", redirectUrl);
-
-        if (redirectUrl != null && redirectUrl.Contains("/tag/"))
-        {
-          var version = redirectUrl.Split("/tag/").Last();
-          _logger.LogDebug("Latest version: {Version}", version);
-          Version = version;
-          return 1;
-        }
-      }
-      else
-      {
-        _logger.LogError("Unhandled statuscode: {StatusCode}", response.StatusCode);
-        return -1;
-      }
+      LogStart();
+      var res = await GithubApiHelper.GetFromGithub(Repository, client, _logger);
       LogFinish();
-      return -1;
+      if(Version != "NotFound"){
+        // TODO use enum
+        Version = res.Item2;
+      }
+      return res.Item1;
     }
 
     public PowerShellInstaller(

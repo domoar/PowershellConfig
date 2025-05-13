@@ -25,8 +25,14 @@ Set-AliasSafe -Name dcd -Value Docker-Compose-Down -ErrorAction Stop
 Set-AliasSafe -Name ddstart -Value Docker-Desktop-Start -ErrorAction Stop
 Set-AliasSafe -Name ddstop -Value Docker-Desktop-Stop -ErrorAction Stop
 Set-AliasSafe -Name ddres -Value Docker-Desktop-Restart -ErrorAction Stop
-Set-AliasSafe -Name <> -Value <> -ErrorAction Stop
-
+Set-AliasSafe -Name <> -Value Git-DisplayLog -ErrorAction Stop
+Set-AliasSafe -Name <> -Value Git-ForcePush -ErrorAction Stop
+Set-AliasSafe -Name <> -Value Git-Cleanup -ErrorAction Stop
+Set-AliasSafe -Name <> -Value Git-CreateAndCheckoutNewBranch -ErrorAction Stop
+Set-AliasSafe -Name <> -Value Git-RevertLastCommit -ErrorAction Stop
+Set-AliasSafe -Name <> -Value Git-CurrentBranch -ErrorAction Stop
+Set-AliasSafe -Name <> -Value Git-UpdateBranch -ErrorAction Stop
+Set-AliasSafe -Name <> -Value Git-AddAllAndCommit -ErrorAction Stop
 oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\kali.omp.json" | Invoke-Expression
 
 

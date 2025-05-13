@@ -1,11 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-using Helpers;
 using Microsoft.Extensions.Logging;
 
 namespace ToolsLibrary
@@ -52,7 +44,7 @@ namespace ToolsLibrary
       return -1;
     }
 
-    public PythonInstaller(ILogger<PythonInstaller>? logger, IHttpClientFactory clientFactory)
+    public PythonInstaller(ILogger<PythonInstaller> logger, IHttpClientFactory clientFactory)
       : base(logger, clientFactory) { }
   }
 }
