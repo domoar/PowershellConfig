@@ -1,0 +1,172 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 3,
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "session",
+          "style": "plain",
+          "foreground": "lightBlue",
+          "foreground_templates": [
+            "{{ if .Root }}lightRed{{ end }}"
+          ],
+          "properties": {
+            "display_host": true
+          },
+          "template": "<{{ if .Root }}lightBlue{{ else }}green{{ end }}>\u250c\u2500\u2500(</>{{ .UserName }}@{{ .HostName }}<{{ if .Root }}lightBlue{{ else }}green{{ end }}>)</>"
+        },
+        {
+          "type": "python",
+          "style": "plain",
+          "foreground": "yellow",
+          "properties": {
+            "fetch_version": false,
+            "fetch_virtual_env": true
+          },
+          "template": "<{{ if .Root }}lightBlue{{ else }}green{{ end }}>-[</>\ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }}{{ end }}{{ .Full }}{{ end }}<{{ if .Root }}lightBlue{{ else }}green{{ end }}>]</>"
+        },
+        {
+          "type": "dotnet",
+          "style": "plain",
+          "foreground": "cyan",
+          "properties": {
+            "fetch_version": true,
+            "display_mode": "context",
+            "fetch_sdk_version": true
+          },
+          "template": "{{ if .Full }}<{{ if .Root }}lightBlue{{ else }}green{{ end }}>-[</>\uE77F {{ .Full }}<{{ if .Root }}lightBlue{{ else }}green{{ end }}>]{{ end }}"
+        },
+        {
+          "type": "go",
+          "style": "plain",
+          "foreground": "#ffffff",
+          "background": "#7FD5EA",
+          "properties": {
+            "display_mode": "context"
+          },
+          "template": "  {{ .Full }} "
+        },
+        {
+          "type": "node",
+          "style": "plain",
+          "foreground": "#ffffff",
+          "background": "#6CA35E",
+          "properties": {
+            "display_mode": "context"
+          },
+          "template": "  {{ .Full }} "
+        },
+        {
+          "type": "java",
+          "style": "plain",
+          "foreground": "#ffffff",
+          "background": "#4063D8",
+          "properties": {
+            "display_mode": "context"
+          },
+          "template": "  {{ .Full }}"
+        },
+        {
+          "type": "rust",
+          "style": "plain",
+          "foreground": "#193549",
+          "background": "#99908a",
+          "properties": {
+            "display_mode": "context"
+          },
+          "template": "  {{ .Full }} "
+        },
+        {
+          "type": "zig",
+          "style": "plain",
+          "foreground": "#342311",
+          "background": "#ffad55",
+          "properties": {
+            "display_mode": "context"
+          },
+          "template": "  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
+        },
+        {
+          "type": "kotlin",
+          "style": "plain",
+          "foreground": "#ffffff",
+          "background": "#906cff",
+          "properties": {
+            "display_mode": "context"
+          },
+          "template": " 🅺 {{ .Full }} "
+        },
+        {
+          "type": "lua",
+          "style": "plain",
+          "foreground": "white",
+          "background": "blue",
+          "properties": {
+            "display_mode": "context"
+          },
+          "template": "  {{ .Full }} "
+        },
+        {
+          "type": "path",
+          "style": "plain",
+          "foreground": "lightWhite",
+          "properties": {
+            "folder_separator_icon": "<#c0c0c0>/</>",
+            "style": "full"
+          },
+          "template": "<{{ if .Root }}lightBlue{{ else }}green{{ end }}>-[</>{{ .Path }}<{{ if .Root }}lightBlue{{ else }}green{{ end }}>]</>"
+        },
+        {
+          "type": "git",
+          "style": "plain",
+          "foreground": "white",
+          "template": "<{{ if .Root }}lightBlue{{ else }}green{{ end }}>-[</>{{ .HEAD }}<{{ if .Root }}lightBlue{{ else }}green{{ end }}>]</>"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "type": "executiontime",
+          "style": "plain",
+          "foreground": "white",
+          "properties": {
+            "always_enabled": true,
+            "style": "round"
+          },
+          "template": " {{ .FormattedMs }} "
+        },
+        {
+          "type": "status",
+          "style": "plain",
+          "foreground": "green",
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}red{{ end }}"
+          ],
+          "properties": {
+            "always_enabled": true
+          },
+          "template": " {{ if gt .Code 0 }}\uea76{{else}}\uf42e{{ end }} "
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "lightBlue",
+          "template": "<{{ if .Root }}lightBlue{{ else }}green{{ end }}>\u2514\u2500</>{{ if .Root }}<lightRed>#</>{{ else }}${{ end }} "
+        }
+      ]
+    }
+  ]
+}

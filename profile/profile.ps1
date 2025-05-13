@@ -28,3 +28,13 @@ Set-AliasSafe -Name ddres -Value Docker-Desktop-Restart -ErrorAction Stop
 Set-AliasSafe -Name <> -Value <> -ErrorAction Stop
 
 oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\kali.omp.json" | Invoke-Expression
+
+
+Set-PSReadLineOption -PredictionSource History
+Set-PSReadLineOption -PredictionViewStyle ListView
+Set-PSReadLineOption -EditMode Windows
+
+Set-PSReadlineOption -MaximumHistoryCount 100000
+
+function ls_git { & '$env:GIT_HOME\usr\bin\ls' --color=auto -hF $args -l -a }
+    Set-Alias -Name ls -Value ls_git
